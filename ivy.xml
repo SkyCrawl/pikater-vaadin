@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE ivy-module [
+	<!ENTITY vaadin.version "7.1.14">
+]>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="org.pikater" module="pikater-vaadin" revision="1.0.0">
+		<extends extendType="all" organisation="org.pikater" module="pikater-core" revision="1.0.0" location="core/ivy.xml"/>
+	</info>
+	<configurations>
+		<conf name="runtime_extension" extends="runtime_common" description="Contains all dependencies required by pikater-vaadin at runtime." />
+		<conf name="compile_extension" extends="compile_core" description="Contains all dependencies required by pikater-vaadin to build." />
+	</configurations>
+	<dependencies defaultconf="runtime_extension" defaultconfmapping="runtime_extension->default">
+		<!-- USAGE:
+			Dependencies without 'conf' attribute go to the 'runtime_extension' configuration by default and WILL be included in the exported WAR file.
+			Should you wish for a dependency NOT to be included in the exported WAR file, you must declare it like this:
+				<dependency org="..." name="..." rev="..." conf="compile_extension->default" />
+		-->
+	
+		<!-- VAADIN -->
+		<dependency org="com.vaadin" name="vaadin-server" rev="&vaadin.version;" /> <!-- The core server part of Vaadin. -->
+		<dependency org="com.vaadin" name="vaadin-themes" rev="&vaadin.version;" /> <!-- Vaadin themes. -->
+		<dependency org="com.vaadin" name="vaadin-push" rev="&vaadin.version;" /> <!-- Push support. -->
+		<dependency org="com.vaadin" name="vaadin-client-compiled" rev="&vaadin.version;" /> <!-- Precompiled DefaultWidgetSet. -->
+		<dependency org="com.vaadin" name="vaadin-client" rev="&vaadin.version;" conf="compile_extension->default" /> <!-- Vaadin client engine, needed for widget set compilation. -->
+		<dependency org="com.vaadin" name="vaadin-client-compiler" rev="&vaadin.version;" conf="compile_extension->default" /> <!-- Vaadin client compiler. Compiles custom widget sets. -->
+		
+		<!-- VAADIN ADD-ONS -->
+		<dependency org="org.vaadin.addons" name="wizards-for-vaadin" rev="1.0.2" />
+		<dependency org="com.wcs.wcslib" name="wcslib-vaadin-widget-multifileupload" rev="1.7.1" />
+		<dependency org="org.vaadin.alump.fancylayouts" name="fancylayouts-addon" rev="1.0.1" />
+		<dependency org="de.steinwedel.vaadin.addon" name="messagebox" rev="2.0.6" />
+		<dependency org="org.vaadin.addons" name="fonticon" rev="7.1.1" />	
+		<dependency org="org.vaadin.addons" name="dom" rev="0.1.0" />
+		<dependency org="org.vaadin.addons" name="actionbuttontextfield" rev="1.0.2" />
+		<!--
+		<dependency org="org.vaadin.alump.gofullscreen" name="gofullscreen-addon" rev="0.2.0" />
+		-->
+		
+		<!-- MISCELLANEOUS -->
+		<dependency org="com.jcraft" name="jsch" rev="0.1.50" />
+		<dependency org="org.fusesource.jansi" name="jansi" rev="1.11" />
+		
+	</dependencies>
+</ivy-module>

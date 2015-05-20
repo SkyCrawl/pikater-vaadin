@@ -1,0 +1,49 @@
+@CHARSET "US-ASCII";
+
+.bannerArea
+{
+	background-color: black;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.bannerArea .v-label, .bannerArea .gwt-Label
+{
+	font-size: 14px;
+}
+
+.bannerArea .label-accountName
+{
+	text-decoration: underline;
+	color: gold;
+}
+
+.bannerArea-image
+{
+}
+
+.bannerArea-authinfo
+{
+	margin-right: 10px;
+}
+
+.leftMenu-container, .v-panel-content-leftMenu-container
+{
+	height: 100%;
+}
+
+.leftMenu
+{
+	padding: 15px 25px 15px 10px;
+}
+
+.leftMenu .anchor
+{
+	white-space: nowrap;
+}
+
+.v-panel-content-contentArea
+{
+	padding: 15px 20px 15px 25px;
+}

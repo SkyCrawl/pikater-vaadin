@@ -1,0 +1,13 @@
+# Ignore compiled binaries.
+bin
+build
+WebContent/VAADIN/widgetsets
+wiki/javadoc
+wiki/technical/database/schemaspy_output
+
+# Ignore development junk.
+WebContent/VAADIN/gwt-unitCache
+
+# Miscellaneous.
+.DS_Store
+.sonar

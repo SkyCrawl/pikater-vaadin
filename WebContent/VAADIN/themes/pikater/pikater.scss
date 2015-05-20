@@ -1,0 +1,62 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin pikater {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+
+  /********************************/
+  /* Insert your theme rules here */
+  /********************************/
+  
+  /* Some popup/dialog related styles */
+  .progressDialog .v-verticallayout
+  {
+  	width: 100%;
+  }
+  
+  /* Style for root element of a UI */
+  .topLevelElement
+  {
+  	display: block;
+	width: 1350px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+  
+  /* Miscellaneous global styles */
+  .maxWidth
+  {
+  	width: 100%;
+  }
+  .maxHeight
+  {
+  	height: 100%;
+  }
+  .autoWidth
+  {
+  	width: auto;
+  }
+  .autoHeight
+  {
+  	height: auto;
+  }
+  .displayBorder
+  {
+  	border: 1px solid black;
+  }
+  .okLabel
+  {
+  	color: green;
+  }
+  .errorLabel
+  {
+  	color: red;
+  }
+}
